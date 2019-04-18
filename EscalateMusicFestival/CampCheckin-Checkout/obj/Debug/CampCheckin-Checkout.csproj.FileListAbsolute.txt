@@ -1,0 +1,10 @@
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\CampCheckin-Checkout.exe.config
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\CampCheckin-Checkout.exe
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\CampCheckin-Checkout.pdb
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.csprojAssemblyReference.cache
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin_Checkout.Form1.resources
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin_Checkout.Properties.Resources.resources
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.csproj.GenerateResource.cache
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.csproj.CoreCompileInputs.cache
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.exe
+C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.pdb
