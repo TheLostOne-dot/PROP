@@ -36,6 +36,8 @@
             this.lbxIDscan = new System.Windows.Forms.ListBox();
             this.btnMakepurchase = new System.Windows.Forms.Button();
             this.btnManual = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSold = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -116,11 +118,31 @@
             this.btnManual.Text = "Manual";
             this.btnManual.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "label1";
+            // 
+            // lblSold
+            // 
+            this.lblSold.AutoSize = true;
+            this.lblSold.Location = new System.Drawing.Point(370, 347);
+            this.lblSold.Name = "lblSold";
+            this.lblSold.Size = new System.Drawing.Size(36, 17);
+            this.lblSold.TabIndex = 30;
+            this.lblSold.Text = "Sold";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSold);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnManual);
             this.Controls.Add(this.btnMakepurchase);
             this.Controls.Add(this.groupBox3);
@@ -133,6 +155,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -146,6 +169,8 @@
         private System.Windows.Forms.ListBox lbxIDscan;
         private System.Windows.Forms.Button btnMakepurchase;
         private System.Windows.Forms.Button btnManual;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSold;
     }
 }
 

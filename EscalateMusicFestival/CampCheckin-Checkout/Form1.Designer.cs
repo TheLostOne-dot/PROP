@@ -43,6 +43,7 @@
             this.lblCapacity = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbxAvailablecampingspots = new System.Windows.Forms.ListBox();
+            this.lblCheckedin = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +78,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCheckedin);
             this.groupBox1.Controls.Add(this.lbxIDscan);
             this.groupBox1.Location = new System.Drawing.Point(327, 22);
             this.groupBox1.Name = "groupBox1";
@@ -177,7 +179,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 17);
             this.label1.TabIndex = 1;
@@ -192,6 +194,15 @@
             this.lbxAvailablecampingspots.Size = new System.Drawing.Size(213, 196);
             this.lbxAvailablecampingspots.TabIndex = 0;
             // 
+            // lblCheckedin
+            // 
+            this.lblCheckedin.AutoSize = true;
+            this.lblCheckedin.Location = new System.Drawing.Point(27, 93);
+            this.lblCheckedin.Name = "lblCheckedin";
+            this.lblCheckedin.Size = new System.Drawing.Size(78, 17);
+            this.lblCheckedin.TabIndex = 7;
+            this.lblCheckedin.Text = "Checked In";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,6 +216,7 @@
             this.Name = "Form1";
             this.Text = "Camp Checkin/Checkout";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -227,6 +239,7 @@
         private System.Windows.Forms.Label lblCapacity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbxAvailablecampingspots;
+        private System.Windows.Forms.Label lblCheckedin;
     }
 }
 

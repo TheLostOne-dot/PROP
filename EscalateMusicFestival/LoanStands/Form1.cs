@@ -16,5 +16,15 @@ namespace LoanStands
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLoan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

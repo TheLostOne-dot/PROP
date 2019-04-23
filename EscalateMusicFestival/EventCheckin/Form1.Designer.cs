@@ -39,6 +39,7 @@
             this.cbNoticket = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbxNewidscan = new System.Windows.Forms.ListBox();
+            this.lblCheckincheckout = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -103,7 +104,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lbxIDscan);
-            this.groupBox1.Location = new System.Drawing.Point(32, 140);
+            this.groupBox1.Location = new System.Drawing.Point(32, 112);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(341, 116);
             this.groupBox1.TabIndex = 19;
@@ -133,8 +134,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblCheckincheckout);
             this.groupBox3.Controls.Add(this.lbxNewidscan);
-            this.groupBox3.Location = new System.Drawing.Point(436, 140);
+            this.groupBox3.Location = new System.Drawing.Point(436, 112);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(340, 116);
             this.groupBox3.TabIndex = 22;
@@ -150,6 +152,15 @@
             this.lbxNewidscan.Name = "lbxNewidscan";
             this.lbxNewidscan.Size = new System.Drawing.Size(326, 52);
             this.lbxNewidscan.TabIndex = 6;
+            // 
+            // lblCheckincheckout
+            // 
+            this.lblCheckincheckout.AutoSize = true;
+            this.lblCheckincheckout.Location = new System.Drawing.Point(6, 93);
+            this.lblCheckincheckout.Name = "lblCheckincheckout";
+            this.lblCheckincheckout.Size = new System.Drawing.Size(152, 17);
+            this.lblCheckincheckout.TabIndex = 7;
+            this.lblCheckincheckout.Text = "CheckedInCheckedOut";
             // 
             // Form1
             // 
@@ -169,6 +180,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +199,7 @@
         private System.Windows.Forms.CheckBox cbNoticket;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox lbxNewidscan;
+        private System.Windows.Forms.Label lblCheckincheckout;
     }
 }
 

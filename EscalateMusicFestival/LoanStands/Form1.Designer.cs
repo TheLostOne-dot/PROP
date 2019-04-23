@@ -36,6 +36,7 @@
             this.lbxIDscan = new System.Windows.Forms.ListBox();
             this.btnManual = new System.Windows.Forms.Button();
             this.btnLoan = new System.Windows.Forms.Button();
+            this.lblLoan = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -116,11 +117,22 @@
             this.btnLoan.Text = "Loan ";
             this.btnLoan.UseVisualStyleBackColor = true;
             // 
+            // lblLoan
+            // 
+            this.lblLoan.AutoSize = true;
+            this.lblLoan.Location = new System.Drawing.Point(364, 336);
+            this.lblLoan.Name = "lblLoan";
+            this.lblLoan.Size = new System.Drawing.Size(56, 17);
+            this.lblLoan.TabIndex = 35;
+            this.lblLoan.Text = "Loaned";
+            this.lblLoan.Click += new System.EventHandler(this.lblLoan_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblLoan);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOpen);
@@ -132,6 +144,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -145,6 +158,7 @@
         private System.Windows.Forms.ListBox lbxIDscan;
         private System.Windows.Forms.Button btnManual;
         private System.Windows.Forms.Button btnLoan;
+        private System.Windows.Forms.Label lblLoan;
     }
 }
 

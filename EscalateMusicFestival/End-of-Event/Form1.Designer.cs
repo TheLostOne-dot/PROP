@@ -36,6 +36,7 @@
             this.btnShowloaneditems = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbxLoaneditems = new System.Windows.Forms.ListBox();
+            this.lblBalance = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -116,11 +117,21 @@
             this.lbxLoaneditems.Size = new System.Drawing.Size(367, 180);
             this.lbxLoaneditems.TabIndex = 26;
             // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Location = new System.Drawing.Point(335, 164);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(102, 17);
+            this.lblBalance.TabIndex = 26;
+            this.lblBalance.Text = "Visitor Balance";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnShowloaneditems);
             this.Controls.Add(this.btnMakeInvalid);
@@ -132,6 +143,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -145,6 +157,7 @@
         private System.Windows.Forms.Button btnShowloaneditems;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox lbxLoaneditems;
+        private System.Windows.Forms.Label lblBalance;
     }
 }
 
