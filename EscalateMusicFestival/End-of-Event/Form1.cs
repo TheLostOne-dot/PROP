@@ -16,5 +16,18 @@ namespace End_of_Event
         {
             InitializeComponent();
         }
+
+        private void btnShowloaneditems_Click(object sender, EventArgs e)
+        {
+            if (lbxLoaneditems == null)
+            {
+                MessageBox.Show("No Loaned Items");
+            }
+            else
+            {
+                lbxLoaneditems.Visible = true;
+            }
+            
+        }
     }
 }
