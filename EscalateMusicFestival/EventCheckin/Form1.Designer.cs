@@ -35,12 +35,13 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbID = new System.Windows.Forms.TextBox();
+            this.lbIDe = new System.Windows.Forms.Label();
             this.cbNoticket = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblCheckincheckout = new System.Windows.Forms.Label();
             this.lbxNewidscan = new System.Windows.Forms.ListBox();
-            this.lbIDe = new System.Windows.Forms.Label();
-            this.tbID = new System.Windows.Forms.TextBox();
+            this.btnStoreid = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnStoreid);
             this.groupBox2.Controls.Add(this.lblGeneratedId);
             this.groupBox2.Controls.Add(this.btnGenerateID);
             this.groupBox2.Location = new System.Drawing.Point(184, 298);
@@ -60,7 +62,7 @@
             // lblGeneratedId
             // 
             this.lblGeneratedId.AutoSize = true;
-            this.lblGeneratedId.Location = new System.Drawing.Point(194, 78);
+            this.lblGeneratedId.Location = new System.Drawing.Point(76, 75);
             this.lblGeneratedId.Name = "lblGeneratedId";
             this.lblGeneratedId.Size = new System.Drawing.Size(25, 17);
             this.lblGeneratedId.TabIndex = 22;
@@ -68,11 +70,11 @@
             // 
             // btnGenerateID
             // 
-            this.btnGenerateID.Location = new System.Drawing.Point(128, 21);
+            this.btnGenerateID.Location = new System.Drawing.Point(47, 21);
             this.btnGenerateID.Name = "btnGenerateID";
             this.btnGenerateID.Size = new System.Drawing.Size(180, 39);
             this.btnGenerateID.TabIndex = 0;
-            this.btnGenerateID.Text = "Generate Ticket ";
+            this.btnGenerateID.Text = "Generate Ticket #";
             this.btnGenerateID.UseVisualStyleBackColor = true;
             // 
             // btnManual
@@ -112,6 +114,22 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ID";
+            // 
+            // tbID
+            // 
+            this.tbID.Location = new System.Drawing.Point(91, 48);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(162, 22);
+            this.tbID.TabIndex = 1;
+            // 
+            // lbIDe
+            // 
+            this.lbIDe.AutoSize = true;
+            this.lbIDe.Location = new System.Drawing.Point(60, 51);
+            this.lbIDe.Name = "lbIDe";
+            this.lbIDe.Size = new System.Drawing.Size(25, 17);
+            this.lbIDe.TabIndex = 0;
+            this.lbIDe.Text = "ID:";
             // 
             // cbNoticket
             // 
@@ -154,21 +172,14 @@
             this.lbxNewidscan.Size = new System.Drawing.Size(326, 52);
             this.lbxNewidscan.TabIndex = 6;
             // 
-            // lbIDe
+            // btnStoreid
             // 
-            this.lbIDe.AutoSize = true;
-            this.lbIDe.Location = new System.Drawing.Point(60, 51);
-            this.lbIDe.Name = "lbIDe";
-            this.lbIDe.Size = new System.Drawing.Size(25, 17);
-            this.lbIDe.TabIndex = 0;
-            this.lbIDe.Text = "ID:";
-            // 
-            // tbID
-            // 
-            this.tbID.Location = new System.Drawing.Point(91, 48);
-            this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(162, 22);
-            this.tbID.TabIndex = 1;
+            this.btnStoreid.Location = new System.Drawing.Point(278, 41);
+            this.btnStoreid.Name = "btnStoreid";
+            this.btnStoreid.Size = new System.Drawing.Size(132, 36);
+            this.btnStoreid.TabIndex = 23;
+            this.btnStoreid.Text = "Store ID";
+            this.btnStoreid.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -210,6 +221,7 @@
         private System.Windows.Forms.Label lblCheckincheckout;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label lbIDe;
+        private System.Windows.Forms.Button btnStoreid;
     }
 }
 
