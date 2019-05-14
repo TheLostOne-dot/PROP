@@ -182,6 +182,7 @@
             this.lbxNewidscan.Name = "lbxNewidscan";
             this.lbxNewidscan.Size = new System.Drawing.Size(326, 52);
             this.lbxNewidscan.TabIndex = 6;
+            this.lbxNewidscan.SelectedIndexChanged += new System.EventHandler(this.lbxNewidscan_SelectedIndexChanged);
             // 
             // Form1
             // 

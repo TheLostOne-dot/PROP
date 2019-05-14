@@ -28,6 +28,7 @@ namespace EventCheckin
                 myRFIDReader.Tag += new RFIDTagEventHandler(ReadTag);
 
                 lbxNewidscan.Items.Add("Startup successfull");
+               
             }
             catch (PhidgetException) { lbxNewidscan.Items.Add("Error at startup"); }
         }
@@ -82,24 +83,33 @@ namespace EventCheckin
 
         public void ReadTag(object sender, RFIDTagEventArgs e)
         {
-            lbxNewidscan.Items.Add("Checked In");
-            lblCheckincheckout.Text = "ID: " + e.Tag + " checked in";
-            
+           
+            // lblCheckincheckout.Text = "";
 
-            if (lblCheckincheckout.Text != "")
-            {
-                
-                int nrAdded = dh.AddNewVisitorID(tbID.Text,e.Tag);
+
+            // if (lblCheckincheckout.Text != "")
+            // {
+
+            int nrAdded = dh.AddNewVisitorID(tbID.Text,e.Tag);
                 if (nrAdded > 0)
                 {
+
+                    lbxNewidscan.Items.Clear();
+                    lbxNewidscan.Items.Add("Checked In: " + e.Tag);
                     lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
+              
                 }
                 else
                 {
-                    lblCheckincheckout.Text = "Checked out Visitor: " + e.Tag;
+                    lblCheckincheckout.Text = "Check in failed";
+
                 } 
-            } 
+           // } 
         }
 
+        private void lbxNewidscan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
