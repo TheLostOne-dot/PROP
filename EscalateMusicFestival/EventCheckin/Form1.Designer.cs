@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnStoreid = new System.Windows.Forms.Button();
             this.lblGeneratedId = new System.Windows.Forms.Label();
             this.btnGenerateID = new System.Windows.Forms.Button();
             this.btnManual = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblCheckincheckout = new System.Windows.Forms.Label();
             this.lbxNewidscan = new System.Windows.Forms.ListBox();
-            this.btnStoreid = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -58,6 +58,15 @@
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Visible = false;
+            // 
+            // btnStoreid
+            // 
+            this.btnStoreid.Location = new System.Drawing.Point(278, 41);
+            this.btnStoreid.Name = "btnStoreid";
+            this.btnStoreid.Size = new System.Drawing.Size(132, 36);
+            this.btnStoreid.TabIndex = 23;
+            this.btnStoreid.Text = "Store ID";
+            this.btnStoreid.UseVisualStyleBackColor = true;
             // 
             // lblGeneratedId
             // 
@@ -94,6 +103,7 @@
             this.btnClose.TabIndex = 18;
             this.btnClose.Text = "Close Connection";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnOpen
             // 
@@ -103,6 +113,7 @@
             this.btnOpen.TabIndex = 17;
             this.btnOpen.Text = "Open Connection";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // groupBox1
             // 
@@ -172,15 +183,6 @@
             this.lbxNewidscan.Size = new System.Drawing.Size(326, 52);
             this.lbxNewidscan.TabIndex = 6;
             // 
-            // btnStoreid
-            // 
-            this.btnStoreid.Location = new System.Drawing.Point(278, 41);
-            this.btnStoreid.Name = "btnStoreid";
-            this.btnStoreid.Size = new System.Drawing.Size(132, 36);
-            this.btnStoreid.TabIndex = 23;
-            this.btnStoreid.Text = "Store ID";
-            this.btnStoreid.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -195,6 +197,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "EventCheckin-Checkout";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
