@@ -23,42 +23,6 @@ namespace EventCheckin
             connection = new MySqlConnection(connectionInfo);
         }
 
-
-        /*  public List<Visitor> GetAllVisitors()
-          {
-             String sql = "SELECT * FROM Visitor";
-              MySqlCommand command = new MySqlCommand(sql, connection);
-
-              List<Visitor> temp;
-              temp = new List<Visitor>();
-
-              try
-              {
-                  connection.Open();
-                  MySqlDataReader reader = command.ExecuteReader();
-
-                  String name;
-                  int nr;
-                  int cr;
-                  while (reader.Read())
-                  {
-                      name = Convert.ToString(reader["Visitorname"]);
-                      nr = Convert.ToInt32(reader["Visitornumber"]);
-                      cr = Convert.ToInt32(reader["NrOfCredits"]);
-                      temp.Add(new Visitor(nr, name, cr));
-                  }
-              }
-              catch
-              {
-                  MessageBox.Show("error while loading the Visitors");
-              }
-              finally
-              {
-                  connection.Close();
-              }
-              return temp; 
-          } */
-
         /*      public int AddVisitor(int number, string name, int creditpoints)
               {  
 
@@ -115,7 +79,7 @@ namespace EventCheckin
         public int Checkout(string eventid)
         {
 
-            String sql = "UPDATE visitor SET CheckedIn = @checkedinafter WHERE EventId = @eventid and CheckedIn = @checkedinbefore";
+            String sql = "UPDATE visitor SET CheckedIn = @checkedinafter WHERE EventId = @eventid AND CheckedIn = @checkedinbefore";
             MySqlCommand command = new MySqlCommand(sql, connection);
             command.Parameters.AddWithValue("@eventid", eventid);
             command.Parameters.AddWithValue("@checkedinafter", "No");
@@ -175,7 +139,7 @@ namespace EventCheckin
         public int Checkin(string eventid)
         {
 
-            String sql = "UPDATE visitor SET CheckedIn = @checkedinafter WHERE EventId = @eventid and CheckedIn = @checkedinbefore";
+            String sql = "UPDATE visitor SET CheckedIn = @checkedinafter WHERE EventId = @eventid AND CheckedIn = @checkedinbefore";
             MySqlCommand command = new MySqlCommand(sql, connection);
             command.Parameters.AddWithValue("@eventid", eventid);
             command.Parameters.AddWithValue("@checkedinafter", "Yes");
@@ -199,107 +163,7 @@ namespace EventCheckin
                 connection.Close();
             }
         }
-        /*   public int RemoveVisitor(int number, string name, int creditpoints)
-           {
-               if (number != 0 && name == "" & creditpoints == 0)
-               {
-                   String sql = "DELETE FROM Visitor WHERE Visitornumber = @number";
-                   MySqlCommand command = new MySqlCommand(sql, connection);
-                   //  command.Parameters.AddWithValue("@name", name);
-                   command.Parameters.AddWithValue("@number", number);
-                   //   command.Parameters.AddWithValue("@cp", creditpoints);
-
-                   try
-                   {
-                       connection.Open();
-                       int nrOfRecordsDeleted = command.ExecuteNonQuery();
-                       return nrOfRecordsDeleted;
-                   }
-                   catch
-                   {
-                       return -1;
-                   }
-                   finally
-                   {
-                       connection.Close();
-                   }
-               }
-               else if (number == 0 && name != "" & creditpoints == 0)
-               {
-                   String sql = "DELETE FROM Visitor WHERE Visitorname = @name";
-                   MySqlCommand command = new MySqlCommand(sql, connection);
-                   command.Parameters.AddWithValue("@name", name);
-                   //  command.Parameters.AddWithValue("@number", number);
-                   //  command.Parameters.AddWithValue("@cp", creditpoints);
-                   try
-                   {
-                       connection.Open();
-                       int nrOfRecordsDeleted = command.ExecuteNonQuery();
-                       return nrOfRecordsDeleted;
-                   }
-                   catch
-                   {
-                       return -1;
-                   }
-                   finally
-                   {
-                       connection.Close();
-                   }
-               }
-               else if (number == 0 && name == "" & creditpoints != 0)
-               {
-                   String sql = "DELETE FROM Visitor WHERE NrOfCredits = @cp";
-                   MySqlCommand command = new MySqlCommand(sql, connection);
-                   // command.Parameters.AddWithValue("@name", name);
-                   //    command.Parameters.AddWithValue("@number", number);
-                   command.Parameters.AddWithValue("@cp", creditpoints);
-
-                   try
-                   {
-                       connection.Open();
-                       int nrOfRecordsDeleted = command.ExecuteNonQuery();
-                       return nrOfRecordsDeleted;
-                   }
-                   catch
-                   {
-                       return -1;
-                   }
-                   finally
-                   {
-                       connection.Close();
-                   }
-               }
-               else
-               {
-                   return -1;
-               }
-
-
-
-
-           }
-
-         /*  public int NumberOfVisitors()
-           {
-               String sql = "SELECT COUNT(*) FROM Visitor";
-               MySqlCommand command = new MySqlCommand(sql, connection);
-               int number = 0;
-               try
-               {
-                   connection.Open();
-                   number = Convert.ToInt32(command.ExecuteScalar());
-                   return number;
-               }
-               catch
-               {
-                   return -1;
-
-               }
-               finally
-               {
-                   connection.Close();
-               } 
-           } */
+        
     }
 }
 

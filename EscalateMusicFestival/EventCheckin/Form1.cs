@@ -25,7 +25,8 @@ namespace EventCheckin
                 myRFIDReader = new RFID();
                 myRFIDReader.Attach += new AttachEventHandler(Attached);
                 myRFIDReader.Detach += new DetachEventHandler(Detached);
-                myRFIDReader.Tag += new RFIDTagEventHandler(ReadTag);
+                myRFIDReader.Tag += new RFIDTagEventHandler(ReadTagNewID);
+                myRFIDReader.Tag += new RFIDTagEventHandler(ReadTagCheck);
 
                 lbxNewidscan.Items.Add("Startup successfull");
                
@@ -81,33 +82,76 @@ namespace EventCheckin
             lbxNewidscan.Items.Add("RFID Reader detached");
         }
 
-        public void ReadTag(object sender, RFIDTagEventArgs e)
+        public void ReadTagNewID(object sender, RFIDTagEventArgs e)
         {
            
-            // lblCheckincheckout.Text = "";
+
+            int catchnr = dh.AddNewVisitorID(tbID.Text,e.Tag);
+                if (catchnr > 0)
+                {
+                    
+                    lbxNewidscan.Items.Clear();
+                    lbxNewidscan.Items.Add("Checked In: " + e.Tag);
+                    lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
+
+                     
+                }
+                else 
+                {
+                    lblCheckincheckout.Text = "Check in failed";
+
+                } 
+         
+        }
+
+        public void ReadTagCheck(object sender, RFIDTagEventArgs e)
+        {
+            if(dh.CheckedinCheckoutSelect(e.Tag) == "Yes")
+            {
+                int catchnr = dh.Checkout(e.Tag);
+                if (catchnr > 0)
+                {
+
+                    lbxNewidscan.Items.Clear();
+                    lbxNewidscan.Items.Add("Checked Out: " + e.Tag);
+                    lblCheckincheckout.Text = "Checked out Visitor: " + e.Tag;
 
 
-            // if (lblCheckincheckout.Text != "")
-            // {
+                }
+                else
+                {
+                    lblCheckincheckout.Text = "Checkout failed";
 
-            int nrAdded = dh.AddNewVisitorID(tbID.Text,e.Tag);
-                if (nrAdded > 0)
+                }
+
+            }
+            else if (dh.CheckedinCheckoutSelect(e.Tag) == "No")
+            {
+                int catchnr = dh.Checkin(e.Tag);
+                if (catchnr > 0)
                 {
 
                     lbxNewidscan.Items.Clear();
                     lbxNewidscan.Items.Add("Checked In: " + e.Tag);
                     lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
-              
+
+
                 }
                 else
                 {
                     lblCheckincheckout.Text = "Check in failed";
 
-                } 
-           // } 
+                }
+
+            }
+
+
+
+
         }
 
-        private void lbxNewidscan_SelectedIndexChanged(object sender, EventArgs e)
+
+            private void lbxNewidscan_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
