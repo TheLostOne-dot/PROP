@@ -38,10 +38,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbID = new System.Windows.Forms.TextBox();
             this.lbIDe = new System.Windows.Forms.Label();
-            this.cbNoticket = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblCheckincheckout = new System.Windows.Forms.Label();
             this.lbxNewidscan = new System.Windows.Forms.ListBox();
+            this.lblGeneratedIDnr = new System.Windows.Forms.Label();
+            this.lblStored = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -49,29 +50,32 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblStored);
+            this.groupBox2.Controls.Add(this.lblGeneratedIDnr);
             this.groupBox2.Controls.Add(this.btnStoreid);
             this.groupBox2.Controls.Add(this.lblGeneratedId);
             this.groupBox2.Controls.Add(this.btnGenerateID);
-            this.groupBox2.Location = new System.Drawing.Point(184, 298);
+            this.groupBox2.Location = new System.Drawing.Point(158, 284);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(434, 105);
+            this.groupBox2.Size = new System.Drawing.Size(477, 105);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Visible = false;
+            this.groupBox2.Text = "No Ticket?";
             // 
             // btnStoreid
             // 
-            this.btnStoreid.Location = new System.Drawing.Point(278, 41);
+            this.btnStoreid.Location = new System.Drawing.Point(259, 22);
             this.btnStoreid.Name = "btnStoreid";
-            this.btnStoreid.Size = new System.Drawing.Size(132, 36);
+            this.btnStoreid.Size = new System.Drawing.Size(161, 38);
             this.btnStoreid.TabIndex = 23;
             this.btnStoreid.Text = "Store ID";
             this.btnStoreid.UseVisualStyleBackColor = true;
+            this.btnStoreid.Click += new System.EventHandler(this.btnStoreid_Click);
             // 
             // lblGeneratedId
             // 
             this.lblGeneratedId.AutoSize = true;
-            this.lblGeneratedId.Location = new System.Drawing.Point(76, 75);
+            this.lblGeneratedId.Location = new System.Drawing.Point(44, 72);
             this.lblGeneratedId.Name = "lblGeneratedId";
             this.lblGeneratedId.Size = new System.Drawing.Size(25, 17);
             this.lblGeneratedId.TabIndex = 22;
@@ -85,10 +89,11 @@
             this.btnGenerateID.TabIndex = 0;
             this.btnGenerateID.Text = "Generate Ticket #";
             this.btnGenerateID.UseVisualStyleBackColor = true;
+            this.btnGenerateID.Click += new System.EventHandler(this.btnGenerateID_Click);
             // 
             // btnManual
             // 
-            this.btnManual.Location = new System.Drawing.Point(344, 409);
+            this.btnManual.Location = new System.Drawing.Point(340, 395);
             this.btnManual.Name = "btnManual";
             this.btnManual.Size = new System.Drawing.Size(111, 36);
             this.btnManual.TabIndex = 20;
@@ -142,20 +147,8 @@
             this.lbIDe.TabIndex = 0;
             this.lbIDe.Text = "ID:";
             // 
-            // cbNoticket
-            // 
-            this.cbNoticket.AutoSize = true;
-            this.cbNoticket.Location = new System.Drawing.Point(357, 271);
-            this.cbNoticket.Name = "cbNoticket";
-            this.cbNoticket.Size = new System.Drawing.Size(98, 21);
-            this.cbNoticket.TabIndex = 0;
-            this.cbNoticket.Text = "No Ticket?";
-            this.cbNoticket.UseVisualStyleBackColor = true;
-            this.cbNoticket.CheckedChanged += new System.EventHandler(this.cbNoticket_CheckedChanged);
-            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.lblCheckincheckout);
             this.groupBox3.Controls.Add(this.lbxNewidscan);
             this.groupBox3.Location = new System.Drawing.Point(436, 112);
             this.groupBox3.Name = "groupBox3";
@@ -167,30 +160,49 @@
             // lblCheckincheckout
             // 
             this.lblCheckincheckout.AutoSize = true;
-            this.lblCheckincheckout.Location = new System.Drawing.Point(6, 93);
+            this.lblCheckincheckout.Location = new System.Drawing.Point(624, 231);
             this.lblCheckincheckout.Name = "lblCheckincheckout";
             this.lblCheckincheckout.Size = new System.Drawing.Size(152, 17);
             this.lblCheckincheckout.TabIndex = 7;
             this.lblCheckincheckout.Text = "CheckedInCheckedOut";
+            this.lblCheckincheckout.Visible = false;
             // 
             // lbxNewidscan
             // 
             this.lbxNewidscan.FormattingEnabled = true;
             this.lbxNewidscan.ItemHeight = 16;
-            this.lbxNewidscan.Location = new System.Drawing.Point(7, 36);
+            this.lbxNewidscan.Location = new System.Drawing.Point(7, 20);
             this.lbxNewidscan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbxNewidscan.Name = "lbxNewidscan";
-            this.lbxNewidscan.Size = new System.Drawing.Size(326, 52);
+            this.lbxNewidscan.Size = new System.Drawing.Size(326, 84);
             this.lbxNewidscan.TabIndex = 6;
             this.lbxNewidscan.SelectedIndexChanged += new System.EventHandler(this.lbxNewidscan_SelectedIndexChanged);
+            // 
+            // lblGeneratedIDnr
+            // 
+            this.lblGeneratedIDnr.AutoSize = true;
+            this.lblGeneratedIDnr.Location = new System.Drawing.Point(75, 72);
+            this.lblGeneratedIDnr.Name = "lblGeneratedIDnr";
+            this.lblGeneratedIDnr.Size = new System.Drawing.Size(46, 17);
+            this.lblGeneratedIDnr.TabIndex = 23;
+            this.lblGeneratedIDnr.Text = "label1";
+            // 
+            // lblStored
+            // 
+            this.lblStored.AutoSize = true;
+            this.lblStored.Location = new System.Drawing.Point(256, 72);
+            this.lblStored.Name = "lblStored";
+            this.lblStored.Size = new System.Drawing.Size(46, 17);
+            this.lblStored.TabIndex = 23;
+            this.lblStored.Text = "label1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCheckincheckout);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.cbNoticket);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnManual);
             this.Controls.Add(this.btnClose);
@@ -204,7 +216,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,13 +230,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblGeneratedId;
         private System.Windows.Forms.Button btnGenerateID;
-        private System.Windows.Forms.CheckBox cbNoticket;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox lbxNewidscan;
         private System.Windows.Forms.Label lblCheckincheckout;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label lbIDe;
         private System.Windows.Forms.Button btnStoreid;
+        private System.Windows.Forms.Label lblGeneratedIDnr;
+        private System.Windows.Forms.Label lblStored;
     }
 }
 

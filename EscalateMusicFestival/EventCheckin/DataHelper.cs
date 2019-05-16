@@ -23,14 +23,12 @@ namespace EventCheckin
             connection = new MySqlConnection(connectionInfo);
         }
 
-        /*      public int AddVisitor(int number, string name, int creditpoints)
+        public int AddVisitor(string eventid)
               {  
 
-                  String sql = "INSERT INTO Visitor VALUES (@name, @number, @cp)";
+                  String sql = "INSERT INTO visitor (EventID) VALUES (@eventid)";
                   MySqlCommand command = new MySqlCommand(sql, connection);
-                  command.Parameters.AddWithValue("@name", name);
-                  command.Parameters.AddWithValue("@number", number);
-                  command.Parameters.AddWithValue("@cp", creditpoints);
+                  command.Parameters.AddWithValue("@eventid", eventid);
 
 
                   try
@@ -47,7 +45,7 @@ namespace EventCheckin
                   {
                       connection.Close();
                   }
-              } */
+              } 
 
         public int AddNewVisitorID(string oldeventid, string neweventid)
         {

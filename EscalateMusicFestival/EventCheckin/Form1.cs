@@ -16,9 +16,11 @@ namespace EventCheckin
     {
         private RFID myRFIDReader;
         private DataHelper dh;
+        private Looper l;
         public Form1()
         {
             InitializeComponent();
+            l = new Looper();
             dh = new DataHelper();
             try
             {
@@ -26,7 +28,7 @@ namespace EventCheckin
                 myRFIDReader.Attach += new AttachEventHandler(Attached);
                 myRFIDReader.Detach += new DetachEventHandler(Detached);
                 myRFIDReader.Tag += new RFIDTagEventHandler(ReadTagNewID);
-                myRFIDReader.Tag += new RFIDTagEventHandler(ReadTagCheck);
+              //  myRFIDReader.Tag += new RFIDTagEventHandler(ReadTagCheck);
 
                 lbxNewidscan.Items.Add("Startup successfull");
                
@@ -34,17 +36,7 @@ namespace EventCheckin
             catch (PhidgetException) { lbxNewidscan.Items.Add("Error at startup"); }
         }
 
-        private void cbNoticket_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbNoticket.Checked == true)
-            {
-                groupBox2.Visible = true;
-            }
-            else
-            {
-                groupBox2.Visible = false;
-            }
-        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -84,76 +76,93 @@ namespace EventCheckin
 
         public void ReadTagNewID(object sender, RFIDTagEventArgs e)
         {
-           
 
-            int catchnr = dh.AddNewVisitorID(tbID.Text,e.Tag);
-                if (catchnr > 0)
-                {
-                    
-                    lbxNewidscan.Items.Clear();
-                    lbxNewidscan.Items.Add("Checked In: " + e.Tag);
-                    lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
 
-                     
-                }
-                else 
-                {
-                    lblCheckincheckout.Text = "Check in failed";
-
-                } 
-         
-        }
-
-        public void ReadTagCheck(object sender, RFIDTagEventArgs e)
-        {
-            if(dh.CheckedinCheckoutSelect(e.Tag) == "Yes")
+            int catchnr = dh.AddNewVisitorID(tbID.Text, e.Tag);
+            if (catchnr > 0)
             {
-                int catchnr = dh.Checkout(e.Tag);
-                if (catchnr > 0)
+
+                lbxNewidscan.Items.Clear();
+                lbxNewidscan.Items.Add("Checked In with bracelet: " + e.Tag);
+                //  lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
+
+
+            }
+            else
+            {
+                // lblCheckincheckout.Text = "Check in failed";
+                // lbxNewidscan.Items.Add("Waiting for bracelet scan......" /*+ e.Tag*/);
+                if (dh.CheckedinCheckoutSelect(e.Tag) == "No")
                 {
+                    int catchnr2 = dh.Checkin(e.Tag);
+                    if (catchnr2 > 0)
+                    {
 
-                    lbxNewidscan.Items.Clear();
-                    lbxNewidscan.Items.Add("Checked Out: " + e.Tag);
-                    lblCheckincheckout.Text = "Checked out Visitor: " + e.Tag;
+                        lbxNewidscan.Items.Clear();
+                        lbxNewidscan.Items.Add("Checked In Visitor: " + e.Tag);
+                        // lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
 
+
+                    }
+                    else
+                    {
+                        // lblCheckincheckout.Text = "Check in failed";
+                        lbxNewidscan.Items.Add("Checked In Failed" /*+ e.Tag*/);
+
+                    }
 
                 }
-                else
+                else if (dh.CheckedinCheckoutSelect(e.Tag) == "Yes")
                 {
-                    lblCheckincheckout.Text = "Checkout failed";
+                    int catchnr2 = dh.Checkout(e.Tag);
+                    if (catchnr2 > 0)
+                    {
+
+                        lbxNewidscan.Items.Clear();
+                        lbxNewidscan.Items.Add("Checked Out Visitor: " + e.Tag);
+                        // lblCheckincheckout.Text = "Checked out Visitor: " + e.Tag;
+
+
+                    }
+                    else
+                    {
+                        // lblCheckincheckout.Text = "Checkout failed";
+                        lbxNewidscan.Items.Add("Checked Out Failed" /*+ e.Tag*/);
+                    }
 
                 }
 
             }
-            else if (dh.CheckedinCheckoutSelect(e.Tag) == "No")
-            {
-                int catchnr = dh.Checkin(e.Tag);
-                if (catchnr > 0)
-                {
-
-                    lbxNewidscan.Items.Clear();
-                    lbxNewidscan.Items.Add("Checked In: " + e.Tag);
-                    lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
-
-
-                }
-                else
-                {
-                    lblCheckincheckout.Text = "Check in failed";
-
-                }
-
-            }
-
-
-
-
         }
-
 
             private void lbxNewidscan_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
+
+        private void btnGenerateID_Click(object sender, EventArgs e)
+        {
+           lblGeneratedIDnr.Text = l.LoopID();
+             
+        }
+
+        private void btnStoreid_Click(object sender, EventArgs e)
+        {
+            int catchnr = dh.AddVisitor(lblGeneratedIDnr.Text);
+
+            if (catchnr > 0)
+            {
+
+                lblStored.Text = "Stored Visitor: " + lblGeneratedIDnr.Text;
+
+
+            }
+            else
+            {
+                lblStored.Text = "Failed to store Visitor";
+            }
+
+
+            }
     }
 }
