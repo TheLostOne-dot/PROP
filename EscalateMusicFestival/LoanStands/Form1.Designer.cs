@@ -39,7 +39,8 @@
             this.lblItemID = new System.Windows.Forms.Label();
             this.lblShopID = new System.Windows.Forms.Label();
             this.tbLoanStandID = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblCopiedID = new System.Windows.Forms.Label();
+            this.tbItemID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,7 @@
             this.btnClose.TabIndex = 30;
             this.btnClose.Text = "Close Connection";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnOpen
             // 
@@ -61,9 +63,11 @@
             this.btnOpen.TabIndex = 29;
             this.btnOpen.Text = "Open Connection";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCopiedID);
             this.groupBox1.Controls.Add(this.lbxIDscan);
             this.groupBox1.Location = new System.Drawing.Point(22, 122);
             this.groupBox1.Name = "groupBox1";
@@ -99,6 +103,7 @@
             this.btnLoan.TabIndex = 33;
             this.btnLoan.Text = "Loan ";
             this.btnLoan.UseVisualStyleBackColor = true;
+            this.btnLoan.Click += new System.EventHandler(this.btnLoan_Click);
             // 
             // lblLoan
             // 
@@ -112,10 +117,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tbItemID);
             this.groupBox3.Controls.Add(this.lblItemID);
             this.groupBox3.Controls.Add(this.lblShopID);
             this.groupBox3.Controls.Add(this.tbLoanStandID);
-            this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Location = new System.Drawing.Point(438, 122);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(340, 116);
@@ -148,12 +153,21 @@
             this.tbLoanStandID.Size = new System.Drawing.Size(100, 22);
             this.tbLoanStandID.TabIndex = 31;
             // 
-            // textBox1
+            // lblCopiedID
             // 
-            this.textBox1.Location = new System.Drawing.Point(156, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 0;
+            this.lblCopiedID.AutoSize = true;
+            this.lblCopiedID.Location = new System.Drawing.Point(6, 96);
+            this.lblCopiedID.Name = "lblCopiedID";
+            this.lblCopiedID.Size = new System.Drawing.Size(46, 17);
+            this.lblCopiedID.TabIndex = 37;
+            this.lblCopiedID.Text = "label1";
+            // 
+            // tbItemID
+            // 
+            this.tbItemID.Location = new System.Drawing.Point(156, 82);
+            this.tbItemID.Name = "tbItemID";
+            this.tbItemID.Size = new System.Drawing.Size(100, 22);
+            this.tbItemID.TabIndex = 33;
             // 
             // Form1
             // 
@@ -169,7 +183,9 @@
             this.Controls.Add(this.btnLoan);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -189,7 +205,8 @@
         private System.Windows.Forms.Label lblItemID;
         private System.Windows.Forms.Label lblShopID;
         private System.Windows.Forms.TextBox tbLoanStandID;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblCopiedID;
+        private System.Windows.Forms.TextBox tbItemID;
     }
 }
 
