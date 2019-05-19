@@ -28,7 +28,6 @@ namespace EventCheckin
                 myRFIDReader.Attach += new AttachEventHandler(Attached);
                 myRFIDReader.Detach += new DetachEventHandler(Detached);
                 myRFIDReader.Tag += new RFIDTagEventHandler(ReadTagNewID);
-              //  myRFIDReader.Tag += new RFIDTagEventHandler(ReadTagCheck);
 
                 lbxNewidscan.Items.Add("Startup successfull");
                

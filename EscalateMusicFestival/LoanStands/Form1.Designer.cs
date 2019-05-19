@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lbxItemIDscan = new System.Windows.Forms.ListBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -37,29 +35,14 @@
             this.btnManual = new System.Windows.Forms.Button();
             this.btnLoan = new System.Windows.Forms.Button();
             this.lblLoan = new System.Windows.Forms.Label();
-            this.groupBox3.SuspendLayout();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblItemID = new System.Windows.Forms.Label();
+            this.lblShopID = new System.Windows.Forms.Label();
+            this.tbLoanStandID = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lbxItemIDscan);
-            this.groupBox3.Location = new System.Drawing.Point(426, 122);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(340, 116);
-            this.groupBox3.TabIndex = 32;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "ItemID";
-            // 
-            // lbxItemIDscan
-            // 
-            this.lbxItemIDscan.FormattingEnabled = true;
-            this.lbxItemIDscan.ItemHeight = 16;
-            this.lbxItemIDscan.Location = new System.Drawing.Point(7, 36);
-            this.lbxItemIDscan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lbxItemIDscan.Name = "lbxItemIDscan";
-            this.lbxItemIDscan.Size = new System.Drawing.Size(326, 52);
-            this.lbxItemIDscan.TabIndex = 6;
             // 
             // btnClose
             // 
@@ -127,13 +110,58 @@
             this.lblLoan.Text = "Loaned";
             this.lblLoan.Click += new System.EventHandler(this.lblLoan_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblItemID);
+            this.groupBox3.Controls.Add(this.lblShopID);
+            this.groupBox3.Controls.Add(this.tbLoanStandID);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Location = new System.Drawing.Point(438, 122);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(340, 116);
+            this.groupBox3.TabIndex = 36;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "LoanStand/ItemID";
+            // 
+            // lblItemID
+            // 
+            this.lblItemID.AutoSize = true;
+            this.lblItemID.Location = new System.Drawing.Point(95, 82);
+            this.lblItemID.Name = "lblItemID";
+            this.lblItemID.Size = new System.Drawing.Size(55, 17);
+            this.lblItemID.TabIndex = 31;
+            this.lblItemID.Text = "Item ID:";
+            // 
+            // lblShopID
+            // 
+            this.lblShopID.AutoSize = true;
+            this.lblShopID.Location = new System.Drawing.Point(52, 39);
+            this.lblShopID.Name = "lblShopID";
+            this.lblShopID.Size = new System.Drawing.Size(98, 17);
+            this.lblShopID.TabIndex = 32;
+            this.lblShopID.Text = "LoanStand ID:";
+            // 
+            // tbLoanStandID
+            // 
+            this.tbLoanStandID.Location = new System.Drawing.Point(156, 36);
+            this.tbLoanStandID.Name = "tbLoanStandID";
+            this.tbLoanStandID.Size = new System.Drawing.Size(100, 22);
+            this.tbLoanStandID.TabIndex = 31;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(156, 77);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblLoan);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.lblLoan);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.groupBox1);
@@ -141,17 +169,15 @@
             this.Controls.Add(this.btnLoan);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox lbxItemIDscan;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -159,6 +185,11 @@
         private System.Windows.Forms.Button btnManual;
         private System.Windows.Forms.Button btnLoan;
         private System.Windows.Forms.Label lblLoan;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblItemID;
+        private System.Windows.Forms.Label lblShopID;
+        private System.Windows.Forms.TextBox tbLoanStandID;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
