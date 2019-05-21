@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbItemID = new System.Windows.Forms.TextBox();
+            this.lblItemID = new System.Windows.Forms.Label();
+            this.lblShopID = new System.Windows.Forms.Label();
+            this.tbShopID = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -36,11 +40,6 @@
             this.btnMakepurchase = new System.Windows.Forms.Button();
             this.btnManual = new System.Windows.Forms.Button();
             this.lblSold = new System.Windows.Forms.Label();
-            this.tbShopID = new System.Windows.Forms.TextBox();
-            this.lblShopID = new System.Windows.Forms.Label();
-            this.lblItemID = new System.Windows.Forms.Label();
-            this.tbItemID = new System.Windows.Forms.TextBox();
-            this.lblCopiedID = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +56,38 @@
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Shop/ItemID";
+            // 
+            // tbItemID
+            // 
+            this.tbItemID.Location = new System.Drawing.Point(156, 82);
+            this.tbItemID.Name = "tbItemID";
+            this.tbItemID.Size = new System.Drawing.Size(100, 22);
+            this.tbItemID.TabIndex = 33;
+            // 
+            // lblItemID
+            // 
+            this.lblItemID.AutoSize = true;
+            this.lblItemID.Location = new System.Drawing.Point(95, 82);
+            this.lblItemID.Name = "lblItemID";
+            this.lblItemID.Size = new System.Drawing.Size(55, 17);
+            this.lblItemID.TabIndex = 31;
+            this.lblItemID.Text = "Item ID:";
+            // 
+            // lblShopID
+            // 
+            this.lblShopID.AutoSize = true;
+            this.lblShopID.Location = new System.Drawing.Point(88, 39);
+            this.lblShopID.Name = "lblShopID";
+            this.lblShopID.Size = new System.Drawing.Size(62, 17);
+            this.lblShopID.TabIndex = 32;
+            this.lblShopID.Text = "Shop ID:";
+            // 
+            // tbShopID
+            // 
+            this.tbShopID.Location = new System.Drawing.Point(156, 36);
+            this.tbShopID.Name = "tbShopID";
+            this.tbShopID.Size = new System.Drawing.Size(100, 22);
+            this.tbShopID.TabIndex = 31;
             // 
             // btnClose
             // 
@@ -80,7 +111,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblCopiedID);
             this.groupBox1.Controls.Add(this.lbxIDscan);
             this.groupBox1.Location = new System.Drawing.Point(32, 128);
             this.groupBox1.Name = "groupBox1";
@@ -127,48 +157,6 @@
             this.lblSold.TabIndex = 30;
             this.lblSold.Text = "Sold";
             // 
-            // tbShopID
-            // 
-            this.tbShopID.Location = new System.Drawing.Point(156, 36);
-            this.tbShopID.Name = "tbShopID";
-            this.tbShopID.Size = new System.Drawing.Size(100, 22);
-            this.tbShopID.TabIndex = 31;
-            // 
-            // lblShopID
-            // 
-            this.lblShopID.AutoSize = true;
-            this.lblShopID.Location = new System.Drawing.Point(88, 39);
-            this.lblShopID.Name = "lblShopID";
-            this.lblShopID.Size = new System.Drawing.Size(62, 17);
-            this.lblShopID.TabIndex = 32;
-            this.lblShopID.Text = "Shop ID:";
-            // 
-            // lblItemID
-            // 
-            this.lblItemID.AutoSize = true;
-            this.lblItemID.Location = new System.Drawing.Point(95, 82);
-            this.lblItemID.Name = "lblItemID";
-            this.lblItemID.Size = new System.Drawing.Size(55, 17);
-            this.lblItemID.TabIndex = 31;
-            this.lblItemID.Text = "Item ID:";
-            // 
-            // tbItemID
-            // 
-            this.tbItemID.Location = new System.Drawing.Point(156, 82);
-            this.tbItemID.Name = "tbItemID";
-            this.tbItemID.Size = new System.Drawing.Size(100, 22);
-            this.tbItemID.TabIndex = 33;
-            // 
-            // lblCopiedID
-            // 
-            this.lblCopiedID.AutoSize = true;
-            this.lblCopiedID.Location = new System.Drawing.Point(6, 93);
-            this.lblCopiedID.Name = "lblCopiedID";
-            this.lblCopiedID.Size = new System.Drawing.Size(46, 17);
-            this.lblCopiedID.TabIndex = 31;
-            this.lblCopiedID.Text = "label1";
-            this.lblCopiedID.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -187,7 +175,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,7 +194,6 @@
         private System.Windows.Forms.Label lblShopID;
         private System.Windows.Forms.TextBox tbShopID;
         private System.Windows.Forms.TextBox tbItemID;
-        private System.Windows.Forms.Label lblCopiedID;
     }
 }
 

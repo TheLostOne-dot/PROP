@@ -16,6 +16,7 @@ namespace LoanStands
     {
         private RFID myRFIDReader;
         private DataHelper dh;
+        private string tag = "";
         public Form1()
         {
             InitializeComponent();
@@ -46,7 +47,8 @@ namespace LoanStands
 
         public void ReadTagID(object sender, RFIDTagEventArgs e)
         {
-            lblCopiedID.Text = e.Tag;
+            //lblCopiedID.Text = e.Tag;
+            this.tag = e.Tag;
             lbxIDscan.Items.Clear();
             lbxIDscan.Items.Add("Scanned ID: " + e.Tag);
 
@@ -90,12 +92,12 @@ namespace LoanStands
 
         private void btnLoan_Click(object sender, EventArgs e)
         {
-            if (dh.BalanceSelect(lblCopiedID.Text) > dh.PriceSelect(Convert.ToInt32(tbItemID.Text)))
+            if (dh.BalanceSelect(this.tag) > dh.PriceSelect(Convert.ToInt32(tbItemID.Text)))
             {
 
-                double change = dh.BalanceSelect(lblCopiedID.Text) - dh.PriceSelect(Convert.ToInt32(tbItemID.Text));
-                int catchnr = dh.AddLoanedItem(lblCopiedID.Text, Convert.ToInt32(tbLoanStandID.Text), Convert.ToInt32(tbItemID.Text));
-                int catchnr2 = dh.AddNewBalance(lblCopiedID.Text, change);
+                double change = dh.BalanceSelect(this.tag) - dh.PriceSelect(Convert.ToInt32(tbItemID.Text));
+                int catchnr = dh.AddLoanedItem(this.tag, Convert.ToInt32(tbLoanStandID.Text), Convert.ToInt32(tbItemID.Text));
+                int catchnr2 = dh.AddNewBalance(this.tag, change);
                 if (catchnr > 0 && catchnr2 > 0)
                 {
 
@@ -109,7 +111,7 @@ namespace LoanStands
                 }
 
             }
-            else if (dh.BalanceSelect(lblCopiedID.Text) < dh.PriceSelect(Convert.ToInt32(tbItemID.Text)))
+            else if (dh.BalanceSelect(this.tag) < dh.PriceSelect(Convert.ToInt32(tbItemID.Text)))
             {
                 lblLoan.Text = "Not Enough Funds";
             }
@@ -119,5 +121,6 @@ namespace LoanStands
             }
 
         }
+
     }
 }

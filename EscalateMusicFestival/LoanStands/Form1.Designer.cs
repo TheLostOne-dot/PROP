@@ -31,16 +31,16 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCopiedID = new System.Windows.Forms.Label();
             this.lbxIDscan = new System.Windows.Forms.ListBox();
             this.btnManual = new System.Windows.Forms.Button();
             this.btnLoan = new System.Windows.Forms.Button();
             this.lblLoan = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbItemID = new System.Windows.Forms.TextBox();
             this.lblItemID = new System.Windows.Forms.Label();
             this.lblShopID = new System.Windows.Forms.Label();
             this.tbLoanStandID = new System.Windows.Forms.TextBox();
-            this.lblCopiedID = new System.Windows.Forms.Label();
-            this.tbItemID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,15 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ID";
+            // 
+            // lblCopiedID
+            // 
+            this.lblCopiedID.AutoSize = true;
+            this.lblCopiedID.Location = new System.Drawing.Point(6, 96);
+            this.lblCopiedID.Name = "lblCopiedID";
+            this.lblCopiedID.Size = new System.Drawing.Size(46, 17);
+            this.lblCopiedID.TabIndex = 37;
+            this.lblCopiedID.Text = "label1";
             // 
             // lbxIDscan
             // 
@@ -128,6 +137,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "LoanStand/ItemID";
             // 
+            // tbItemID
+            // 
+            this.tbItemID.Location = new System.Drawing.Point(156, 82);
+            this.tbItemID.Name = "tbItemID";
+            this.tbItemID.Size = new System.Drawing.Size(100, 22);
+            this.tbItemID.TabIndex = 33;
+            // 
             // lblItemID
             // 
             this.lblItemID.AutoSize = true;
@@ -152,22 +168,6 @@
             this.tbLoanStandID.Name = "tbLoanStandID";
             this.tbLoanStandID.Size = new System.Drawing.Size(100, 22);
             this.tbLoanStandID.TabIndex = 31;
-            // 
-            // lblCopiedID
-            // 
-            this.lblCopiedID.AutoSize = true;
-            this.lblCopiedID.Location = new System.Drawing.Point(6, 96);
-            this.lblCopiedID.Name = "lblCopiedID";
-            this.lblCopiedID.Size = new System.Drawing.Size(46, 17);
-            this.lblCopiedID.TabIndex = 37;
-            this.lblCopiedID.Text = "label1";
-            // 
-            // tbItemID
-            // 
-            this.tbItemID.Location = new System.Drawing.Point(156, 82);
-            this.tbItemID.Name = "tbItemID";
-            this.tbItemID.Size = new System.Drawing.Size(100, 22);
-            this.tbItemID.TabIndex = 33;
             // 
             // Form1
             // 

@@ -14,7 +14,7 @@ namespace Shops
 
         public DataHelper()
         {
-            String connectionInfo = "server=localhost;" +//the hera-server
+            String connectionInfo = "server=localhost;" +//server
                                     "database=proptest;" +
                                     "user id=root;" +
                                     "password=;" +
