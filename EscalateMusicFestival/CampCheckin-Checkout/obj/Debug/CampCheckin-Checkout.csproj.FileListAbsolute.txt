@@ -8,3 +8,18 @@ C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampC
 C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.csproj.CoreCompileInputs.cache
 C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.exe
 C:\Users\davis\Documents\Visual Studio 2017\Projects\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.pdb
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\CampCheckin-Checkout.exe.config
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\CampCheckin-Checkout.exe
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\CampCheckin-Checkout.pdb
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\MySql.Data.dll
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\Phidget22.NET.dll
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\Phidget22.NET.pdb
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\bin\Debug\Phidget22.NET.xml
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.csprojAssemblyReference.cache
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin_Checkout.Form1.resources
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin_Checkout.Properties.Resources.resources
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.csproj.GenerateResource.cache
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.csproj.CoreCompileInputs.cache
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.csproj.CopyComplete
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.exe
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\CampCheckin-Checkout\obj\Debug\CampCheckin-Checkout.pdb
