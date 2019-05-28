@@ -80,6 +80,7 @@ namespace CampCheckin_Checkout
             {
                 lbxIDscan.Items.Clear();
                 lbxIDscan.Items.Add("Checked in Visitor: " + e.Tag);
+                dh.AddLogCheckedIn(e.Tag);
                 if (dh.CheckedinCheckoutSelect(e.Tag) == "No")
                 {
                     int catchnr2 = dh.Checkin(e.Tag);
@@ -88,6 +89,8 @@ namespace CampCheckin_Checkout
 
                         lbxIDscan.Items.Clear();
                         lbxIDscan.Items.Add("Checked In Visitor: " + e.Tag);
+                        dh.AddLogCheckedIn(e.Tag);
+
                         // lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
 
 
@@ -108,6 +111,7 @@ namespace CampCheckin_Checkout
 
                         lbxIDscan.Items.Clear();
                         lbxIDscan.Items.Add("Checked Out Visitor: " + e.Tag);
+                        dh.AddLogCheckedOut(e.Tag);
                         // lblCheckincheckout.Text = "Checked out Visitor: " + e.Tag;
 
 
@@ -152,6 +156,7 @@ namespace CampCheckin_Checkout
                 double change = dh.BalanceSelect(this.tag) - this.total;
                 int catchnr = dh.AddReservation(dh.CampingIDSelect(lbxAvailablecampingspots.SelectedItem.ToString()),this.tag,Convert.ToInt32(tbAmountofPersons.Text),this.total);
                 int catchnr2 = dh.AddNewBalance(this.tag, change);
+                dh.AddLogReservation(this.tag);
                 if (catchnr > 0 && catchnr2 > 0)
                 { 
                     MessageBox.Show("Camping Spot Reserved, please Check in Visitor");

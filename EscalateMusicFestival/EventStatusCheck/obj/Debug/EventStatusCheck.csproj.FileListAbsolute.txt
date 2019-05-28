@@ -1,0 +1,15 @@
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\bin\Debug\EventStatusCheck.exe.config
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\bin\Debug\EventStatusCheck.exe
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\bin\Debug\EventStatusCheck.pdb
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\bin\Debug\MySql.Data.dll
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\bin\Debug\Phidget22.NET.dll
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\bin\Debug\Phidget22.NET.pdb
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\bin\Debug\Phidget22.NET.xml
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\obj\Debug\EventStatusCheck.csprojAssemblyReference.cache
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\obj\Debug\EventStatusCheck.Form1.resources
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\obj\Debug\EventStatusCheck.Properties.Resources.resources
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\obj\Debug\EventStatusCheck.csproj.GenerateResource.cache
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\obj\Debug\EventStatusCheck.csproj.CoreCompileInputs.cache
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\obj\Debug\EventStatusCheck.csproj.CopyComplete
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\obj\Debug\EventStatusCheck.exe
+C:\Users\davis\Documents\PROP\prop\EscalateMusicFestival\EventStatusCheck\obj\Debug\EventStatusCheck.pdb

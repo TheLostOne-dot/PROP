@@ -83,52 +83,42 @@ namespace EventCheckin
 
                 lbxNewidscan.Items.Clear();
                 lbxNewidscan.Items.Add("Checked In with bracelet: " + e.Tag);
-                //  lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
-
-
-            }
+                dh.AddLogCheckedIn(e.Tag); 
+            } 
             else
-            {
-                // lblCheckincheckout.Text = "Check in failed";
-                // lbxNewidscan.Items.Add("Waiting for bracelet scan......" /*+ e.Tag*/);
+            {   
                 if (dh.CheckedinCheckoutSelect(e.Tag) == "No")
                 {
                     int catchnr2 = dh.Checkin(e.Tag);
+                   
                     if (catchnr2 > 0)
                     {
-
                         lbxNewidscan.Items.Clear();
                         lbxNewidscan.Items.Add("Checked In Visitor: " + e.Tag);
-                        // lblCheckincheckout.Text = "Checked in Visitor: " + e.Tag;
-
-
+                        dh.AddLogCheckedIn(e.Tag);
                     }
                     else
                     {
-                        // lblCheckincheckout.Text = "Check in failed";
                         lbxNewidscan.Items.Add("Checked In Failed" /*+ e.Tag*/);
-
                     }
-
+                    
                 }
                 else if (dh.CheckedinCheckoutSelect(e.Tag) == "Yes")
                 {
                     int catchnr2 = dh.Checkout(e.Tag);
+                   
                     if (catchnr2 > 0)
                     {
 
                         lbxNewidscan.Items.Clear();
                         lbxNewidscan.Items.Add("Checked Out Visitor: " + e.Tag);
-                        // lblCheckincheckout.Text = "Checked out Visitor: " + e.Tag;
-
-
+                        dh.AddLogCheckedOut(e.Tag);
                     }
                     else
                     {
-                        // lblCheckincheckout.Text = "Checkout failed";
                         lbxNewidscan.Items.Add("Checked Out Failed" /*+ e.Tag*/);
                     }
-
+                    
                 }
 
             }

@@ -96,6 +96,7 @@ namespace Shops
 
                    
                     lblSold.Text = "Successfully sold";
+                    dh.AddPurchase(this.tag);
 
                 }
                 else

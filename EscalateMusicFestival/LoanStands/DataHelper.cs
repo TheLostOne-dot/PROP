@@ -133,6 +133,30 @@ namespace LoanStands
             }
         }
 
+        public int AddLoan(string eventid)
+        {
+
+            String sql = "INSERT INTO trackinglog (EventID,Activity) VALUES (@eventid,@activity)";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@eventid", eventid);
+            command.Parameters.AddWithValue("@activity", "loan");
+
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return nrOfRecordsChanged;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
     }
 }
 
