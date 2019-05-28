@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnStartLog = new System.Windows.Forms.Button();
             this.lbxLogs = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnStartLog
@@ -67,6 +69,7 @@
 
         private System.Windows.Forms.Button btnStartLog;
         private System.Windows.Forms.ListBox lbxLogs;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

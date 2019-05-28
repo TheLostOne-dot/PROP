@@ -13,11 +13,17 @@ namespace TransactionLogFileConversion
     class DataHelper
     {
         public MySqlConnection connection;
+        DataTracker dt = new DataTracker();
         string startdate;
         string enddate;
         string deposits;
+        string eventIDfromLog;
+        string amountfromLog;
         string eventID;
-        string amount;
+        double amount;
+        
+
+
         List<string> rofl = new List<string>();
         public DataHelper()
         {
@@ -30,65 +36,103 @@ namespace TransactionLogFileConversion
             connection = new MySqlConnection(connectionInfo);
         }
 
-        public int Transaction(String filename)
-        {
-            
+        public void Transaction(String filename)
+        {            
             FileStream fs = null;
             StreamReader sr = null;
             try
             {
                 fs = new FileStream("transactions.txt", FileMode.Open, FileAccess.Read);
                 sr = new StreamReader(fs);
-                string eventID;
-                string amount;
-
-                //while (!sr.EndOfStream)
-                //{
+                
+                rofl.Clear();
                 startdate = sr.ReadLine();
                 enddate = sr.ReadLine();
                 deposits = sr.ReadLine();
-                string line = sr.ReadLine();
-                string[] linelist = line.Split(' ');
-                eventID = linelist[0];
-                amount = linelist[1];
-
                 rofl.Add(startdate);
                 rofl.Add(enddate);
                 rofl.Add(deposits);
-                rofl.Add(eventID);
-                rofl.Add(amount);
-                String sql = "UPDATE transaction SET Startdate =  @startdate, Enddate = @enddate, Deposits = @deposits, EventID = @eventid, Amount = @amount  ";
-                MySqlCommand command = new MySqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@startdate", startdate);
-                command.Parameters.AddWithValue("@enddate", enddate);
-                command.Parameters.AddWithValue("@deposits", deposits);
-                command.Parameters.AddWithValue("@eventid", eventID);
-                command.Parameters.AddWithValue("@amount", amount);
+                while (!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    string[] linelist = line.Split(' ');
+                    eventIDfromLog = linelist[0];
+                    this.eventID = eventIDfromLog;
+                    amountfromLog = linelist[1];
+                    this.amount = Convert.ToDouble(amountfromLog);
+                    double newbalance = this.amount + dt.BalanceSelect(this.eventID);
+                    dt.AddNewBalance(this.eventID, newbalance);
+                    rofl.Add(eventIDfromLog);
+                    rofl.Add(amountfromLog);
+                }
 
-                connection.Open();
-                int nrOfRecordsChanged = command.ExecuteNonQuery();
-                return nrOfRecordsChanged;
-                //}
+                //String sql = "UPDATE visitor SET Balance = @amount WHERE EventID = @eventid";
+                ////String sql = "UPDATE transaction SET Startdate =  @startdate, Enddate = @enddate, Deposits = @deposits, EventID = @eventid, Amount = @amount  ";
+                //MySqlCommand command = new MySqlCommand(sql, connection);
+                ////command.Parameters.AddWithValue("@startdate", startdate);
+                ////command.Parameters.AddWithValue("@enddate", enddate);
+                ////command.Parameters.AddWithValue("@deposits", deposits);
+                //command.Parameters.AddWithValue("@eventid", eventID);
+                //command.Parameters.AddWithValue("@amount", amount);
+
+                //connection.Open();
+                //int nrOfRecordsChanged = command.ExecuteNonQuery();
+                //return nrOfRecordsChanged;
+                
                 //String sql = "INSERT INTO visitor (EventID) VALUES (@eventid)";
                 //MySqlCommand command = new MySqlCommand(sql, connection);
-                return 1;
+               
             }
             
             catch (IOException ex)
             {
                 MessageBox.Show("something went wrong when reading file");
-                return -1;
+                //return -1;
             }
             finally
             {
                 if (sr != null) sr.Close();
                 if (fs != null) fs.Close();
-                connection.Close();
+                //connection.Close();
             }
         }
         public List<string> ReturnTransactionlog()
         {
             return rofl;
         }
+
+
+        public string GetEventId(string id)
+        {
+            String sql = "Select EventID FROM visitor WHERE EventID = @eventid";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@eventid", id);
+            string eventID = "";
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();//for SELECT
+
+
+                while (reader.Read())
+                {
+                    eventID = Convert.ToString(reader["EventID"]);
+                }
+            }
+            catch
+            {
+
+                eventID = "error";
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return eventID;
+        }
+
+
+
+
     }
 }
