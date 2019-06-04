@@ -103,6 +103,7 @@ namespace LoanStands
 
 
                     lblLoan.Text = "Successfully loaned";
+                    dh.AddLoan(this.tag);
 
                 }
                 else

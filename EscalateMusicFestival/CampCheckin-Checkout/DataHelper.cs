@@ -300,12 +300,13 @@ namespace CampCheckin_Checkout
         public int AddReservation(int campingspotid,string eventid, int numberofpeople , double price)
         {
 
-            String sql = "INSERT INTO reservation (CampingSpotID,EventID,NumberofPeople,Price) VALUES (@campingspotid,@eventid,@numberofpeople,@price)";
+            String sql = "INSERT INTO reservation (CampingSpotID,EventID,NumberofPeople,Price,EventReservation) VALUES (@campingspotid,@eventid,@numberofpeople,@price,@eventreservation)";
             MySqlCommand command = new MySqlCommand(sql, connection);
             command.Parameters.AddWithValue("@campingspotid", campingspotid);
             command.Parameters.AddWithValue("@eventid", eventid);
             command.Parameters.AddWithValue("@numberofpeople", numberofpeople);
             command.Parameters.AddWithValue("@price", price);
+            command.Parameters.AddWithValue("@eventreservation", "Yes");
             try
             {
                 connection.Open();
@@ -347,5 +348,79 @@ namespace CampCheckin_Checkout
                 connection.Close();
             }
         }
+
+        public int AddLogCheckedIn(string eventid)
+        {
+
+            String sql = "INSERT INTO trackinglog (EventID,Activity) VALUES (@eventid,@activity)";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@eventid", eventid);
+            command.Parameters.AddWithValue("@activity", "campcheckin");
+
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return nrOfRecordsChanged;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int AddLogCheckedOut(string eventid)
+        {
+
+            String sql = "INSERT INTO trackinglog (EventID,Activity) VALUES (@eventid,@activity)";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@eventid", eventid);
+            command.Parameters.AddWithValue("@activity", "campcheckout");
+
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return nrOfRecordsChanged;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
+        public int AddLogReservation(string eventid)
+        {
+
+            String sql = "INSERT INTO trackinglog (EventID,Activity) VALUES (@eventid,@activity)";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@eventid", eventid);
+            command.Parameters.AddWithValue("@activity", "reservation");
+
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return nrOfRecordsChanged;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
     }
 }

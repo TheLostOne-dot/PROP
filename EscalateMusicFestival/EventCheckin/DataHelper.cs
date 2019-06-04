@@ -24,28 +24,28 @@ namespace EventCheckin
         }
 
         public int AddVisitor(string eventid)
-              {  
+        {  
 
-                  String sql = "INSERT INTO visitor (EventID) VALUES (@eventid)";
-                  MySqlCommand command = new MySqlCommand(sql, connection);
-                  command.Parameters.AddWithValue("@eventid", eventid);
+          String sql = "INSERT INTO visitor (EventID) VALUES (@eventid)";
+          MySqlCommand command = new MySqlCommand(sql, connection);
+          command.Parameters.AddWithValue("@eventid", eventid);
 
 
-                  try
-                  {
-                      connection.Open();
-                      int nrOfRecordsChanged = command.ExecuteNonQuery();
-                      return nrOfRecordsChanged;
-                  }
-                  catch
-                  {
-                      return -1; 
-                  }
-                  finally
-                  {
-                      connection.Close();
-                  }
-              } 
+          try
+          { 
+            connection.Open();
+            int nrOfRecordsChanged = command.ExecuteNonQuery();
+            return nrOfRecordsChanged;
+           }
+          catch
+          {
+            return -1; 
+          }
+          finally
+          {
+           connection.Close();
+          }
+        } 
 
         public int AddNewVisitorID(string oldeventid, string neweventid)
         {
@@ -161,7 +161,56 @@ namespace EventCheckin
                 connection.Close();
             }
         }
-        
+
+        public int AddLogCheckedIn(string eventid)
+        {
+
+            String sql = "INSERT INTO trackinglog (EventID,Activity) VALUES (@eventid,@activity)";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@eventid", eventid);
+            command.Parameters.AddWithValue("@activity", "eventcheckin");
+
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return nrOfRecordsChanged;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int AddLogCheckedOut(string eventid)
+        {
+
+            String sql = "INSERT INTO trackinglog (EventID,Activity) VALUES (@eventid,@activity)";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@eventid", eventid);
+            command.Parameters.AddWithValue("@activity", "eventcheckout");
+
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return nrOfRecordsChanged;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
     }
 }
 
