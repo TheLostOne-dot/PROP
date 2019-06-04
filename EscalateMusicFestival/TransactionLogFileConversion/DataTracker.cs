@@ -65,7 +65,7 @@ namespace TransactionLogFileConversion
         public int AddNewBalance(string eventid, double newbalance)
         {
 
-            String sql = "UPDATE visitor SET Balance = @balance WHERE EventId = @eventid";
+            String sql = "UPDATE visitor SET Balance = @balance WHERE EventID = @eventid";
             MySqlCommand command = new MySqlCommand(sql, connection);
             command.Parameters.AddWithValue("@balance", newbalance);
             command.Parameters.AddWithValue("@eventid", eventid);
