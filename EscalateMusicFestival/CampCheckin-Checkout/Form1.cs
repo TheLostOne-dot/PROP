@@ -21,6 +21,7 @@ namespace CampCheckin_Checkout
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Camp CheckIn - CheckOut";
             dh = new DataHelper();
             try
             {
@@ -191,6 +192,33 @@ namespace CampCheckin_Checkout
         {
             
             lblInfo.Text = "Capacity of " + dh.CampingCapacitySelect(lbxAvailablecampingspots.SelectedItem.ToString()) + " persons at " + dh.PricePerPersonSelect(lbxAvailablecampingspots.SelectedItem.ToString()) + " euros per person";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnManual_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            int l = Application.StartupPath.ToString().Length;
+            System.Diagnostics.Process.Start(Application.StartupPath.ToString().Remove(l - 31) + @"\EscalateMusicFestival\bin\Debug\EscalateMusicFestival.exe");
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

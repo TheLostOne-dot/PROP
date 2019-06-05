@@ -63,6 +63,16 @@ namespace TransactionLogFileConversion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Resized {
+            get {
+                object obj = ResourceManager.GetObject("Resized", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2019_05_28_at_15_17_48 {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2019-05-28 at 15.17.48", resourceCulture);

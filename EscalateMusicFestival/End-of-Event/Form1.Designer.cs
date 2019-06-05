@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnManual = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +55,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClose.Location = new System.Drawing.Point(12, 216);
+            this.btnClose.Location = new System.Drawing.Point(11, 206);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(187, 36);
@@ -69,7 +70,7 @@
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOpen.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnOpen.Location = new System.Drawing.Point(12, 174);
+            this.btnOpen.Location = new System.Drawing.Point(12, 164);
             this.btnOpen.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(187, 38);
@@ -151,7 +152,7 @@
             this.pictureBox1.Image = global::End_of_Event.Properties.Resources.Resized;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 157);
+            this.pictureBox1.Size = new System.Drawing.Size(187, 147);
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
@@ -222,12 +223,27 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnMakeInvalid_Click);
             // 
+            // btnManual
+            // 
+            this.btnManual.BackColor = System.Drawing.Color.Black;
+            this.btnManual.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnManual.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManual.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnManual.Location = new System.Drawing.Point(14, 387);
+            this.btnManual.Margin = new System.Windows.Forms.Padding(2);
+            this.btnManual.Name = "btnManual";
+            this.btnManual.Size = new System.Drawing.Size(185, 29);
+            this.btnManual.TabIndex = 33;
+            this.btnManual.Text = "MANUAL";
+            this.btnManual.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(581, 497);
+            this.Controls.Add(this.btnManual);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -270,6 +286,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnManual;
     }
 }
 

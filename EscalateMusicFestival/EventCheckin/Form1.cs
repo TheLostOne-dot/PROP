@@ -153,5 +153,17 @@ namespace EventCheckin
 
 
             }
+
+        private void lblGeneratedIDnr_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            int l = Application.StartupPath.ToString().Length;
+            System.Diagnostics.Process.Start(Application.StartupPath.ToString().Remove(l - 23) + @"\EscalateMusicFestival\bin\Debug\EscalateMusicFestival.exe");
+            this.Close();
+        }
     }
 }

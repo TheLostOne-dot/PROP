@@ -22,6 +22,7 @@ namespace TransactionLogFileConversion
         public Form1()
         {
             InitializeComponent();
+            this.Text = "TransactionLogFileConversion";
             dh = new DataHelper();
            
 
@@ -60,6 +61,13 @@ namespace TransactionLogFileConversion
         private void btnManual_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            int l = Application.StartupPath.ToString().Length;
+            System.Diagnostics.Process.Start(Application.StartupPath.ToString().Remove(l - 38) + @"\EscalateMusicFestival\bin\Debug\EscalateMusicFestival.exe");
+            this.Close();
         }
     }
 }

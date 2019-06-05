@@ -20,6 +20,7 @@ namespace LoanStands
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Loan Stand";
             dh = new DataHelper();
             try
             {
